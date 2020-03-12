@@ -39,4 +39,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		mongoTemplate.remove(new Query(Criteria.where("empId").is(empId)), Employee.class);
 	}
 
+	@Override
+	public Employee findEmployeeById(int empId) {
+		return mongoTemplate.findById(empId, Employee.class);
+	}
+
 }

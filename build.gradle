@@ -5,16 +5,20 @@
  * For more details take a look at the Java Libraries chapter in the Gradle
  * User Manual available at https://docs.gradle.org/6.0/userguide/java_library_plugin.html
  */
-
+ 
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
+    id 'war'
+    id 'java'
+    
 }
 
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+    //jcenter()
+    mavenCentral()
 }
 
 dependencies {
@@ -27,13 +31,30 @@ dependencies {
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
     
+		// https://mvnrepository.com/artifact/javax.servlet/jstl
+	//compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+	
+		// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-tomcat
+	//providedRuntime group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat'
+	//compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat'
+			
+		// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
+	//providedRuntime group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.31'
+	//complie group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.31'
+	
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
+	compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.2.4.RELEASE'
+    
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.4.RELEASE'
+	
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.2.4.RELEASE'
     
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test
 	testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.2.4.RELEASE'
 	
-	compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '2.2.4.RELEASE'
 	
 	// https://mvnrepository.com/artifact/org.springframework.data/spring-data-mongodb
 	compile group: 'org.springframework.data', name: 'spring-data-mongodb', version: '2.2.4.RELEASE'
@@ -42,6 +63,8 @@ dependencies {
 	//compile group: 'org.projectlombok', name: 'lombok', version: '1.18.10'
 	
 	compile 'org.projectlombok:lombok:1.18.10'
+	
+	
 	
 	
     

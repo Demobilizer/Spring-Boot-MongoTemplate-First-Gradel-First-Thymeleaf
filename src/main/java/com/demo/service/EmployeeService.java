@@ -28,4 +28,10 @@ public interface EmployeeService {
 	 */
 	void deleteById(int empId);
 
+	/**
+	 * @param empId
+	 * @return
+	 */
+	Employee findEmployeeById(int empId);
+
 }
